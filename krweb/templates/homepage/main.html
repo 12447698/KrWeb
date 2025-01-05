@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load active_link_tags %}
+
+{% block title %}Kr-сайт{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <div class="p-4 bg-light rounded shadow-sm">
+        <h3 class="mb-4">Найти проект</h3>
+        <form action="" method="post">
+          {% csrf_token %}
+          <div class="form-group mb-3">
+            {{ form.project.label_tag }}
+            {{ form.project }}
+            {% if form.project.errors %}
+              <div class="text-danger small">
+                {{ form.project.errors }}
+              </div>
+            {% endif %}
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Найти</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-6 text-center">
+      <h2 class="mb-4">Добро пожаловать в Kr-сайт</h2>
+      <p class="text-muted">
+        Здесь вы можете искать проекты по их уникальному коду.
+        Просто введите код проекта в поле и нажмите кнопку "Найти".
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

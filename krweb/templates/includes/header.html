@@ -1,0 +1,18 @@
+{% load static %}
+{% load active_link_tags %}
+
+<header>
+  <div class="container d-flex justify-content-between align-items-center py-3">
+    <a href="/" class="logo d-flex align-items-center">
+      <img src="{% static 'img/logo.svg' %}" alt="Logo" height="60">
+      <span class="ms-2 fw-bold">Kr-сайт</span>
+    </a>
+    <nav class="my-auto nav-item dropdown">
+      <a href="{% url 'about:main' %}" class="{% if view_name == 'materials:main' %}active{% endif %}">О проекте</a>
+      <a href="{% url 'materials:main' %}" class="{% if view_name == 'materials:main' %}active{% endif %}">Материалы</a>
+      {% if request.user.is_staff %}
+        <a href="/admin/projects/project/">Проекты</a>
+      {% endif %}
+    </nav>
+  </div>
+</header>

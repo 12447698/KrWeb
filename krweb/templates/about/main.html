@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load active_link_tags %}
+{% load static %}
+
+{% block title %}О проекте{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="text-center mb-4">О проекте</h1>
+
+      <div class="card shadow-lg p-4 mb-5 border-0 rounded">
+        <h4 class="card-title text-primary">Kr-сайт</h4>
+        <p class="card-text mt-3">
+          Этот проект представляет собой удобную платформу для работы с различными материалами и проектами.
+          Он предлагает функционал для поиска, загрузки файлов и отображения контента, что упрощает работу
+          с проектами и их содержимым.
+        </p>
+        <p class="card-text mt-2">
+          Проект основан на <strong>Django</strong>, мощном веб-фреймворке, и ориентирован на создание и управление контентом.
+          Его цель — сделать взаимодействие с данными более удобным и интуитивно понятным.
+        </p>
+      </div>
+
+      <div class="text-center mt-5 mb-4">
+        <a href="https://github.com/124476/KrWeb" target="_blank" class="btn btn-dark d-inline-flex align-items-center px-4 py-2 shadow-sm">
+          <i class="bi bi-github me-2" style="font-size: 24px;"></i>
+          <span class="fs-5">Проект на GitHub</span>
+        </a>
+      </div>
+
+      <div class="text-center">
+        <a href="https://github.com/124476" target="_blank" class="btn btn-info d-inline-flex align-items-center px-4 py-2 shadow-sm">
+          <i class="bi bi-person-circle me-2" style="font-size: 24px;"></i>
+          <span class="fs-5">Автор проекта</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

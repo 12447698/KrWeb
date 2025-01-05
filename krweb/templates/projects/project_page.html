@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Результаты поиска{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      {% if project %}
+        <div class="card shadow-lg p-4 mb-4 bg-light rounded">
+          <h1 class="display-4">{{ project.name }}</h1>
+          <h4 class="text-muted mb-4">Код проекта: <strong>{{ project.code }}</strong></h4>
+          <div class="mt-4">
+            <div>{% autoescape off %}{{ project.html_content|safe }}{% endautoescape %}</div>
+          </div>
+        </div>
+      {% else %}
+        <div class="alert alert-warning text-center">
+          <h3>Проект не найден по указанному коду.</h3>
+          <p>Пожалуйста, проверьте правильность введенного кода.</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
