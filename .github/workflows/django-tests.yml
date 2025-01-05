@@ -2,11 +2,9 @@ name: Django Tests
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "master" ]
   pull_request:
-    branches:
-      - main
+    branches: [ "master" ]
 
 jobs:
   test:
@@ -28,5 +26,6 @@ jobs:
           
       - name: Run Django tests for apps
         run: |
+          cd krweb
           python manage.py migrate --noinput
           python manage.py test apps
