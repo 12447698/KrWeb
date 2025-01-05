@@ -8,6 +8,6 @@ urlpatterns = [
     path(
         "delete/<int:pk>/",
         apps.materials.views.DeleteMaterialView.as_view(),
-        name="delete_material",
+        name="delete",
     ),
 ]
